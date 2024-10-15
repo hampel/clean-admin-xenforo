@@ -1,0 +1,6 @@
+{
+    "from_class": "XF\\AdminNavigation",
+    "to_class": "Hampel\\CleanAdmin\\XF\\AdminNavigation",
+    "execute_order": 10,
+    "active": true
+}
