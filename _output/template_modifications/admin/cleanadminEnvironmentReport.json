@@ -1,0 +1,9 @@
+{
+    "template": "index",
+    "description": "",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<xf:if is=\"$envReport\">",
+    "replace": "<xf:if is=\"$xf.visitor.hasAdminPermission('cleanadminServerInfo') && $envReport\">"
+}

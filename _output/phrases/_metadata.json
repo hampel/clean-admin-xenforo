@@ -1,0 +1,20 @@
+{
+    "admin_permission.cleanadminChecksTests.txt": {
+        "global_cache": false,
+        "version_id": 1000011,
+        "version_string": "1.0.0 Alpha 1",
+        "hash": "3a3e7767a5cb5f5b26003fbe3f94b9af"
+    },
+    "admin_permission.cleanadminServerInfo.txt": {
+        "global_cache": false,
+        "version_id": 1000011,
+        "version_string": "1.0.0 Alpha 1",
+        "hash": "3a01bd02588da873b9601d3801ad8636"
+    },
+    "admin_permission.cleanadminStaffOnline.txt": {
+        "global_cache": false,
+        "version_id": 1000011,
+        "version_string": "1.0.0 Alpha 1",
+        "hash": "b93a6347ea331d2a9e442b5cf28d32e4"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "template": "index",
+    "description": "Remove legacy config warning",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<xf:if is=\"$legacyConfig\">",
+    "replace": "<xf:if is=\"$xf.visitor.hasAdminPermission('cleanadminServerInfo') && $legacyConfig\">"
+}

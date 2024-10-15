@@ -1,0 +1,9 @@
+{
+    "template": "index",
+    "description": "Remove stopped manual jobs",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<xf:elseif is=\"$hasStoppedManualJobs\" />",
+    "replace": "<xf:elseif is=\"$xf.visitor.hasAdminPermission('cleanadminServerInfo') && $hasStoppedManualJobs\" />"
+}

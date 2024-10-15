@@ -1,0 +1,23 @@
+{
+    "admin/cleanadminEnvironmentReport.json": {
+        "hash": "0a1afc413cc473c13602fd654b7e637e"
+    },
+    "admin/cleanadminFileChecks.json": {
+        "hash": "49539f4584b77f4eec15e3fce60893f7"
+    },
+    "admin/cleanadminLegacyConfig.json": {
+        "hash": "61968f1620c0e418279766c232383c19"
+    },
+    "admin/cleanadminStaffOnline.json": {
+        "hash": "02669915623a7e8ba9546ce0a249b39a"
+    },
+    "admin/cleanadminStoppedJobs.json": {
+        "hash": "5483fb78eb1da85f855462fc70c1742b"
+    },
+    "admin/cleanadminStoppedManualJobs.json": {
+        "hash": "74fe91c77e981112c8888566edbe886b"
+    },
+    "admin/cleanadminUnicode.json": {
+        "hash": "bef51d42ff4a3f5a89755619c08b3ac0"
+    }
+}

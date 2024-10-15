@@ -1,0 +1,9 @@
+{
+    "template": "index",
+    "description": "Remove stopped jobs warning",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<xf:if is=\"$hasStoppedJobs\">",
+    "replace": "<xf:if is=\"$xf.visitor.hasAdminPermission('cleanadminServerInfo') && $hasStoppedJobs\">"
+}

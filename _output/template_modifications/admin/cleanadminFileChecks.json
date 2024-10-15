@@ -1,0 +1,9 @@
+{
+    "template": "index",
+    "description": "Remove file checks",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<xf:if is=\"$fileChecks is not empty\">",
+    "replace": "<xf:if is=\"$xf.visitor.hasAdminPermission('cleanadminServerInfo') && $fileChecks is not empty\">"
+}

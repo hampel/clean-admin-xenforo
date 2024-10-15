@@ -1,0 +1,9 @@
+{
+    "template": "index",
+    "description": "Remove unicode warning",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<xf:if is=\"$showUnicodeWarning\">",
+    "replace": "<xf:if is=\"$xf.visitor.hasAdminPermission('cleanadminServerInfo') && $showUnicodeWarning\">"
+}
