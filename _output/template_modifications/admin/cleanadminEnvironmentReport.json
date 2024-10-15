@@ -1,6 +1,6 @@
 {
     "template": "index",
-    "description": "",
+    "description": "Remove environment report",
     "execution_order": 10,
     "enabled": true,
     "action": "str_replace",

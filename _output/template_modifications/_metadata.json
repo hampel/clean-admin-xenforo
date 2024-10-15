@@ -1,6 +1,6 @@
 {
     "admin/cleanadminEnvironmentReport.json": {
-        "hash": "0a1afc413cc473c13602fd654b7e637e"
+        "hash": "75980513d05653effb8579c315d2ed51"
     },
     "admin/cleanadminFileChecks.json": {
         "hash": "49539f4584b77f4eec15e3fce60893f7"
@@ -9,7 +9,7 @@
         "hash": "61968f1620c0e418279766c232383c19"
     },
     "admin/cleanadminStaffOnline.json": {
-        "hash": "02669915623a7e8ba9546ce0a249b39a"
+        "hash": "5f6daa59d2568bb8d885475f4ee666ad"
     },
     "admin/cleanadminStoppedJobs.json": {
         "hash": "5483fb78eb1da85f855462fc70c1742b"

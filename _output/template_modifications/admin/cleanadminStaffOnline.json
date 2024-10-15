@@ -5,5 +5,5 @@
     "enabled": true,
     "action": "str_replace",
     "find": "<xf:if is=\"$staffOnline is not empty\">",
-    "replace": "<xf:if is=\"$xf.visitor.hasAdminPermission('cleanadminStaffOnline') && $staffOnline is not empty\">"
+    "replace": "<xf:if is=\"$staffOnline is not empty && $xf.visitor.hasAdminPermission('cleanadminStaffOnline')\">"
 }
