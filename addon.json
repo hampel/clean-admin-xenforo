@@ -2,8 +2,8 @@
     "legacy_addon_id": "",
     "title": "Clean Admin UI",
     "description": "Hide additional admin UI elements from administrative users",
-    "version_id": 1000070,
-    "version_string": "1.0.0",
+    "version_id": 2000070,
+    "version_string": "2.0.0",
     "dev": "Simon Hampel",
     "dev_url": "https://xenforo.com/community/members/sim.4264/",
     "faq_url": "",
@@ -12,6 +12,11 @@
         "Addon": "https://xenforo.com/community/resources/clean-admin-ui.9585/",
         "Git Repository": "https://github.com/hampel/clean-admin-xenforo"
     },
-    "require": [],
+    "require": {
+        "XF": [
+            "2030470",
+            "XenForo 2.3.4+"
+        ]
+    },
     "icon": "fa-eye-slash"
 }
