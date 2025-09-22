@@ -1,10 +1,14 @@
 <?php
 
-/** @noinspection PhpIllegalPsrClassPathInspection */
 // ################## THIS IS A GENERATED FILE ##################
 // DO NOT EDIT DIRECTLY. EDIT THE CLASS EXTENSIONS IN THE CONTROL PANEL.
 
-namespace Hampel\CleanAdmin\XF
+/**
+ * @noinspection PhpIllegalPsrClassPathInspection
+ * @noinspection PhpMultipleClassesDeclarationsInOneFile
+ */
+
+namespace Hampel\CleanAdmin\XF\Repository
 {
-	class XFCP_AdminNavigation extends \XF\AdminNavigation {}
+	class XFCP_UpgradeCheckRepository extends \XF\Repository\UpgradeCheckRepository {}
 }
