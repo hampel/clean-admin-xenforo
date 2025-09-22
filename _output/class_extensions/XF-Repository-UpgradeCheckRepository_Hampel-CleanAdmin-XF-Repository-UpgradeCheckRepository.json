@@ -1,0 +1,6 @@
+{
+    "from_class": "XF\\Repository\\UpgradeCheckRepository",
+    "to_class": "Hampel\\CleanAdmin\\XF\\Repository\\UpgradeCheckRepository",
+    "execute_order": 10,
+    "active": true
+}
