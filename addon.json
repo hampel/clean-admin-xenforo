@@ -7,9 +7,9 @@
     "dev": "Simon Hampel",
     "dev_url": "https://xenforo.com/community/members/sim.4264/",
     "faq_url": "",
-    "support_url": "",
+    "support_url": "https://xenforo.com/community/threads/clean-admin-ui.226130/",
     "extra_urls": {
-        "Addon": "",
+        "Addon": "https://xenforo.com/community/resources/clean-admin-ui.9585/",
         "Git Repository": "https://github.com/hampel/clean-admin-xenforo"
     },
     "require": [],
