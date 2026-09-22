@@ -11,14 +11,11 @@ in the admin control panel.
 The entire surface is:
 
 - `XF/Repository/UpgradeCheckRepository.php` — overrides `canCheckForUpgrades()` to return
-  `false` unless `\XF::visitor()->is_super_admin`, deferring to the parent otherwise.
+  `false` inside the admin control panel unless `\XF::visitor()->is_super_admin`, deferring to the
+  parent everywhere else.
 - `_output/class_extensions/…UpgradeCheckRepository.json` — registers the extension.
 - `Setup.php` — no install, upgrade or uninstall steps; `postUpgrade()` only calls
   `enqueuePostUpgradeCleanUp()` on XF 2.3+.
-
-The other `_output/` directories (`admin_permissions`, `phrases`, `template_modifications`) hold
-only an empty `_metadata.json`. They are left over from 1.x, not placeholders for something
-pending.
 
 ## Requires XenForo 2.3.4, because core took over the rest
 
@@ -33,23 +30,24 @@ That is why `addon.json` requires `2030470`. **Do not lower the floor without re
 removed** — on an older XF the add-on would install and the panels it used to hide would be back.
 The same floor makes the `>= 2030000` guard in `Setup::postUpgrade()` always true; it is harmless.
 
-## Every caller of `canCheckForUpgrades()` sees the visitor, including the background job
+## The restriction is keyed on the admin app, not only on the visitor
 
-The override is visitor-based, and core asks the question in five places, not only where a human
-is looking:
+**Core asks `canCheckForUpgrades()` in five places, and one of them is not a person looking at a
+page.** The admin app itself, `IndexController` and `AddOnController` ask whether to show the
+upgrade notice; `ToolsController` asks before a manual check and shows the `$error` argument when
+refused. All four run in `XF\Admin\App`, with an administrator as the visitor.
 
-- `XF\Admin\App`, `XF\Admin\Controller\IndexController` and `AddOnController` — whether to show
-  the notice. The intended effect.
-- `XF\Admin\Controller\ToolsController` — the manual *Check for upgrades* action, which reports the
-  `$error` argument. The override returns `false` without setting `$error`, so a non-super admin
-  gets no explanation.
-- **`XF\Job\UpgradeCheck::performUpgradeCheck()`** — the scheduled check. A job's visitor is
-  whoever triggered the job run, which is usually not a super admin, and when it is not the job
-  returns without checking and reschedules itself a day or more out.
+The fifth is `XF\Job\UpgradeCheck`, the scheduled check, and it never runs in the admin app:
+`job.php` sets up `XF\Pub\App`, cron runs `XF\Cli\App`, and the control panel's own job runner
+runs manual jobs only. Its visitor is whoever triggered the run — the guest, from the CLI.
 
-Treat the last one as the thing to reason about before changing the condition. Keying on the
-visitor is correct for display and wrong for a job; distinguishing them means checking context
-rather than widening who counts as allowed.
+**So the override tests `\XF::app() instanceof \XF\Admin\App` before it tests the visitor.**
+2.0.0 tested the visitor alone, and the scheduled check returned early on every run that a super
+administrator did not happen to trigger, which on most forums is all of them. Do not simplify the
+condition back to the visitor; that is the defect 2.0.1 fixes.
+
+The refusal sets `$error` to the core `do_not_have_permission` phrase. Without it,
+`ToolsController` falls back to a message blaming the board's configuration.
 
 ## Working on it
 
