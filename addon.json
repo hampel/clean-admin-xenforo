@@ -1,7 +1,7 @@
 {
     "legacy_addon_id": "",
     "title": "Clean Admin UI",
-    "description": "Hide additional admin UI elements from administrative users",
+    "description": "Restrict XenForo upgrade checks and notices to super administrators",
     "version_id": 2000111,
     "version_string": "2.0.1a1",
     "dev": "Simon Hampel",
