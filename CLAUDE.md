@@ -66,9 +66,10 @@ php ../../../../cmd.php xf-addon:build-release Hampel/CleanAdmin  # release only
 is optional, so omitting it exports every add-on in the install. `xf-addon:build-release` runs the
 scoped `xf-addon:export` internally, which is safe.
 
-There is no test suite: no `phpunit.xml`, no `composer.json`, no `vendor/`. Verification is by
-hand in the admin control panel, logged in once as a super administrator and once as an ordinary
-one.
+**There is no test suite, deliberately** — no `phpunit.xml`, no `composer.json`, no `vendor/`.
+`TESTING.md` carries what replaces it: a probe script that asks `canCheckForUpgrades()` under each
+of the CLI, public and admin apps as three kinds of visitor, how to run one real scheduled check,
+and the control panel checks that need a person.
 
 ## Versioning
 
