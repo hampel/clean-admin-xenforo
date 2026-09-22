@@ -86,8 +86,8 @@ possible, because `AddOn::canUpgrade()` requires a strictly greater `version_id`
 ## Build and release
 
 `build.json` has no `additional_files` and no Composer step — two `exec` lines that delete the
-dev-only files from the upload tree and then move every remaining `*.md` out of it, so `README` and
-`CHANGELOG` appear at the zip root rather than being uploaded to a user's server.
+dev-only files from the upload tree and then move every remaining `*.md` out of it, so `README`,
+`CHANGELOG` and `LICENSE` appear at the zip root rather than being uploaded to a user's server.
 
 **Dev-only files are kept out of three places by three separate mechanisms**, and none covers the
 others. The release builder walks the filesystem and knows nothing about git, so gitignoring a file
@@ -104,7 +104,7 @@ already moved to `_build/`, which is the zip root, and `-f` hides the miss. `exe
 fail a build, so check the artefact rather than the exit code:
 
 ```bash
-unzip -Z1 _releases/<file>.zip | grep -v '^upload/'        # zip root
+unzip -Z1 _releases/<file>.zip | grep -v '^upload/'        # zip root: README, CHANGELOG, LICENSE
 unzip -Z1 _releases/<file>.zip | grep -iE 'claude|testing' # want no output
 ```
 
