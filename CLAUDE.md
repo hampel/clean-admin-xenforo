@@ -81,7 +81,7 @@ version string alone and overwrites any existing file of that name.
 Take the smallest bump that is not the last release. Raising later is free; lowering is not
 possible, because `AddOn::canUpgrade()` requires a strictly greater `version_id`.
 
-`CHANGELOG.md` is for stable releases only. It currently stops at 1.0.0 and has no entry for 2.0.0.
+`CHANGELOG.md` is for stable releases only, so an open alpha correctly has no entry in it.
 
 ## Build and release
 
