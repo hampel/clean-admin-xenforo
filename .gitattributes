@@ -1,0 +1,30 @@
+# Normalise line endings to LF, in the repository and in the working tree.
+#
+#   text=auto  store LF in the repository, whatever the committing platform does
+#   eol=lf     check LF back out, so core.autocrlf on a Windows client cannot
+#              reintroduce CRLF on disk
+#
+# Every tracked file here is text (PHP, JSON, Markdown), so one blanket rule
+# covers the repository.
+* text=auto eol=lf
+
+# Guard the binary types an add-on may later ship (icons, screenshots) against
+# being mangled by the rule above. None are tracked today.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.webp binary
+*.zip  binary
+
+# Keep development-only files out of `git archive` output — GitHub's "Download ZIP".
+# This is one of three separate exclusion surfaces and covers none of the others:
+#   the git repo        -> .gitignore
+#   git archive output  -> here
+#   the XenForo zip     -> build.json (rm the dev-only files, then mv *.md out of upload/)
+/CLAUDE.md        export-ignore
+/CLAUDE.local.md  export-ignore
+/TESTING.md       export-ignore
+/.gitattributes   export-ignore
+/.gitignore       export-ignore
